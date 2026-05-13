@@ -163,7 +163,7 @@ body {
   border: var(--border);
   box-shadow: var(--shadow-sm);
   background: var(--bg-white);
-  padding: 4px 14px;
+  padding: 6px 14px;
   display: inline-block;
 }
 

@@ -74,111 +74,215 @@ const Education = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Education Cards Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Education Card */}
-          <div className="sr-left">
+          <div
+            className="card p-0 overflow-hidden"
+            style={{
+              borderRadius: "22px",
+            }}
+          >
+            {/* Top Header */}
             <div
-              className="card p-0 overflow-hidden"
+              className="p-5"
               style={{
-                borderRadius: "22px",
+                background: "var(--accent-3)",
+                borderBottom: "var(--border)",
+                borderTopLeftRadius: "22px",
+                borderTopRightRadius: "22px",
               }}
             >
-              {/* Top Header */}
-              <div
-                className="p-5"
-                style={{
-                  background: "var(--accent)",
-                  borderBottom: "var(--border)",
-                  borderTopLeftRadius: "22px",
-                  borderTopRightRadius: "22px",
-                }}
-              >
-                <p className="font-mono-custom text-xs text-white opacity-70 mb-1">
-                  2021 – 2024
-                </p>
+              <p className="font-mono-custom text-xs text-white opacity-70 mb-1">
+                2021 – 2024
+              </p>
 
-                <h3 className="font-bold text-xl text-white">
-                  Bachelor of Computer Applications
-                </h3>
+              <h3 className="font-bold text-xl text-white">
+                Bachelor of Computer Applications
+              </h3>
 
-                <p className="font-mono-custom text-xs text-white opacity-80 mt-1">
-                  Veer Bahadur Singh Purvanchal University, Jaunpur
-                </p>
+              <p className="font-mono-custom text-xs text-white opacity-80 mt-1">
+                Veer Bahadur Singh Purvanchal University, Jaunpur
+              </p>
+            </div>
+
+            {/* Content */}
+            <div
+              className="p-6"
+              style={{
+                background: "var(--bg-card)",
+                borderBottomLeftRadius: "22px",
+                borderBottomRightRadius: "22px",
+              }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="px-4 py-2 font-bold text-2xl font-display"
+                  style={{
+                    background: "var(--bg-white)",
+                    border: "var(--border)",
+                    boxShadow: "var(--shadow-sm)",
+                    borderRadius: "14px",
+                  }}
+                >
+                  BCA
+                </div>
+
+                <div>
+                  <p
+                    className="font-bold text-sm"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Computer Applications
+                  </p>
+
+                  <p
+                    className="font-mono-custom text-xs"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Graduation Degree
+                  </p>
+                </div>
               </div>
 
-              {/* Content */}
-              <div
-                className="p-6"
-                style={{
-                  background: "var(--bg-card)",
-                  borderBottomLeftRadius: "22px",
-                  borderBottomRightRadius: "22px",
-                }}
+              {/* Courses */}
+              <p
+                className="font-mono-custom text-xs uppercase tracking-widest mb-3"
+                style={{ color: "var(--text-muted)" }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div
-                    className="px-4 py-2 font-bold text-2xl font-display"
+                Relevant Coursework
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {COURSES.map((c, i) => (
+                  <span
+                    key={i}
+                    className="tag"
                     style={{
-                      background: "var(--bg-white)",
-                      border: "var(--border)",
-                      boxShadow: "var(--shadow-sm)",
-                      borderRadius: "14px",
+                      borderRadius: "999px",
                     }}
                   >
-                    BCA
-                  </div>
-
-                  <div>
-                    <p
-                      className="font-bold text-sm"
-                      style={{ color: "var(--text-primary)" }}
-                    >
-                      Computer Applications
-                    </p>
-
-                    <p
-                      className="font-mono-custom text-xs"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      Graduation Degree
-                    </p>
-                  </div>
-                </div>
-
-                {/* Courses */}
-                <p
-                  className="font-mono-custom text-xs uppercase tracking-widest mb-3"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Relevant Coursework
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {COURSES.map((c, i) => (
-                    <span
-                      key={i}
-                      className="tag"
-                      style={{
-                        borderRadius: "999px",
-                      }}
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
+                    {c}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Achievements */}
-          <div className="flex flex-col gap-4">
-            <p
-              className="font-mono-custom text-xs uppercase tracking-widest"
-              style={{ color: "var(--text-muted)" }}
+          {/* Training Card */}
+          <div
+            className="card p-0 overflow-hidden"
+            style={{
+              borderRadius: "22px",
+            }}
+          >
+            {/* Top Header */}
+            <div
+              className="p-5"
+              style={{
+                background: "#2563eb",
+                borderBottom: "var(--border)",
+                borderTopLeftRadius: "22px",
+                borderTopRightRadius: "22px",
+              }}
             >
-              Achievements
-            </p>
+              <p className="font-mono-custom text-xs text-white opacity-70 mb-1">
+                June 2024 – September 2024
+              </p>
 
+              <h3 className="font-bold text-xl text-white">
+                Django & Frontend Development Training
+              </h3>
+
+              <p className="font-mono-custom text-xs text-white opacity-80 mt-1">
+                Digipodium — IT Training & Technology Research Center
+              </p>
+            </div>
+
+            {/* Content */}
+            <div
+              className="p-6"
+              style={{
+                background: "var(--bg-card)",
+                borderBottomLeftRadius: "22px",
+                borderBottomRightRadius: "22px",
+              }}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div
+                  className="px-4 py-2 font-bold text-2xl font-display"
+                  style={{
+                    background: "var(--bg-white)",
+                    border: "var(--border)",
+                    boxShadow: "var(--shadow-sm)",
+                    borderRadius: "14px",
+                  }}
+                >
+                  DJ
+                </div>
+
+                <div>
+                  <p
+                    className="font-bold text-sm"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Python Django Training
+                  </p>
+
+                  <p
+                    className="font-mono-custom text-xs"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Full Stack Web Development
+                  </p>
+                </div>
+              </div>
+
+              <p
+                className="text-sm leading-relaxed mb-4"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                Learned and applied Django, Python, HTML, CSS, JavaScript,
+                Bootstrap, and React.js to build responsive and dynamic web
+                applications with backend integration and database management.
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Python",
+                  "Django",
+                  "React.js",
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "Bootstrap",
+                  "SQLite",
+                ].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="tag"
+                    style={{
+                      borderRadius: "999px",
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Achievements */}
+        <div className="mt-10">
+          <p
+            className="font-mono-custom text-xs uppercase tracking-widest mb-4"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Achievements
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {ACHIEVEMENTS.map((a, i) => (
               <div
                 key={i}
@@ -209,57 +313,6 @@ const Education = () => {
                 </p>
               </div>
             ))}
-
-            {/* Profiles */}
-            <div
-              className="card-white p-4"
-              style={{
-                borderRadius: "18px",
-              }}
-            >
-              <p
-                className="font-mono-custom text-xs uppercase tracking-widest mb-3"
-                style={{ color: "var(--text-muted)" }}
-              >
-                Professional Profiles
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {[
-                  {
-                    name: "GitHub",
-                    url: "https://github.com/Amitp0070",
-                    color: "#000000",
-                  },
-
-                  {
-                    name: "LinkedIn",
-                    url: "https://www.linkedin.com/",
-                    color: "#2563eb",
-                  },
-
-                  {
-                    name: "Portfolio",
-                    url: "#projects",
-                    color: "#16a34a",
-                  },
-                ].map((p, i) => (
-                  <a
-                    key={i}
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="tag"
-                    style={{
-                      color: p.color,
-                      borderRadius: "999px",
-                    }}
-                  >
-                    {p.name} ↗
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
