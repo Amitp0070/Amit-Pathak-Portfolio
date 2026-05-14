@@ -3,16 +3,17 @@ const Footer = () => {
 
   return (
     <footer
-      className="py-10"
+      className="py-5"
       style={{
-        background: "#0f0f0f",
-        borderTop: "3px solid #1a1a1a",
+        background: "var(--footer-bg)",
+        borderTop: "2px solid #1a1a1a",
       }}
     >
       <div
         className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-5"
         style={{
-          background: "rgba(255,255,255,0.01)",
+          background: "var(--inner-footer-bg)",
+          // background: "rgba(255,255,255,0.01)",
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: "4px",
           backdropFilter: "blur(10px)",
@@ -34,21 +35,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-bold text-white text-sm">Amit Pathak</p>
+            <p className="font-bold text-dark text-sm">Amit Pathak</p>
 
-            <p
-              className="font-mono-custom text-xs"
-              style={{
-                color: "#8a8a8a",
-              }}
-            >
+            <p className="font-mono-custom text-xs text-dark">
               Backend Developer
             </p>
           </div>
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center flex-wrap justify-center gap-3">
+        <div className="flex items-center text-dark flex-wrap justify-center gap-3">
           {[
             {
               label: "GitHub",
@@ -73,20 +69,17 @@ const Footer = () => {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono-custom text-xs transition-all duration-300 px-4 py-2"
+              className="font-mono-custom text-dark text-xs transition-all duration-300 px-4 py-2"
               style={{
-                color: "#9a9a9a",
                 border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: "4px",
                 background: "rgba(255,255,255,0.03)",
               }}
               onMouseEnter={(e) => {
-                e.target.style.color = "#fff";
-                e.target.style.background = "rgba(255,255,255,0.08)";
+                e.target.style.scale = "1.5";
               }}
               onMouseLeave={(e) => {
-                e.target.style.color = "#9a9a9a";
-                e.target.style.background = "rgba(255,255,255,0.03)";
+                e.target.style.scale = "1.0";
               }}
             >
               {s.label} ↗
@@ -95,12 +88,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p
-          className="font-mono-custom text-xs"
-          style={{
-            color: "#5a5a5a",
-          }}
-        >
+        <p className="font-mono-custom text-dark text-xs">
           © {year} Amit Pathak
         </p>
       </div>

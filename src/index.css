@@ -25,6 +25,8 @@
   --header-bg: rgba(255, 255, 255, 0.97);
   --input-bg: #ffffff;
   --input-text: #0f0f0f;
+  --footer-bg: #ffffff;
+  --inner-footer-bg: #ffffffd4;
 }
 
 * {
