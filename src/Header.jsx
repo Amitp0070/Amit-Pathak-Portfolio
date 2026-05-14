@@ -69,7 +69,7 @@ const Header = () => {
                   background: !isMobile ? "var(--header-bg)" : "none",
                   borderBottom: !isMobile ? "var(--border)" : "none",
                   boxShadow: !isMobile ? "0 4px 0px #1a1a1a" : "none",
-                  borderRadius: "14px",
+                  borderRadius: "4px",
                 }
               : {}
           }
@@ -85,7 +85,7 @@ const Header = () => {
                 background: "var(--accent)",
                 border: "var(--border)",
                 boxShadow: "2px 2px 0px #1a1a1a",
-                borderRadius: "8px",
+                borderRadius: "4px",
               }}
             >
               AP
@@ -113,11 +113,11 @@ const Header = () => {
                         color: "#fff",
                         border: "var(--border)",
                         boxShadow: "2px 2px 0px #1a1a1a",
-                        borderRadius: "8px",
+                        borderRadius: "4px",
                       }
                     : {
                         color: "var(--text-secondary)",
-                        borderRadius: "8px",
+                        borderRadius: "4px",
                       }
                 }
               >
@@ -129,7 +129,7 @@ const Header = () => {
               onClick={() => scrollTo("contact")}
               className="btn-primary ml-3 px-5 py-2 text-sm"
               style={{
-                borderRadius: "10px",
+                borderRadius: "4px",
               }}
             >
               Hire Me →
@@ -144,7 +144,7 @@ const Header = () => {
                 background: "var(--accent)",
                 border: "var(--border)",
                 boxShadow: "2px 2px 0px #1a1a1a",
-                borderRadius: "8px",
+                borderRadius: "4px",
               }}
               onClick={() => setMenuOpen(!menuOpen)}
             >
@@ -161,7 +161,7 @@ const Header = () => {
               background: "var(--bg-card)",
               border: "var(--border)",
               boxShadow: "var(--shadow-md)",
-              borderRadius: "14px",
+              borderRadius: "4px",
             }}
           >
             {links.map((l) => (
@@ -172,7 +172,7 @@ const Header = () => {
                 style={{
                   color: "var(--text-primary)",
                   borderBottom: "1px solid rgba(26,26,26,0.1)",
-                  borderRadius: "8px",
+                  borderRadius: "4px",
                 }}
               >
                 {l.label}
@@ -183,7 +183,7 @@ const Header = () => {
               onClick={() => scrollTo("contact")}
               className="btn-primary mt-2 px-4 py-3 text-sm text-center"
               style={{
-                borderRadius: "10px",
+                borderRadius: "4px",
               }}
             >
               Hire Me →

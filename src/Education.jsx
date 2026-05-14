@@ -46,7 +46,7 @@ const Education = () => {
           <span
             className="section-label"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           >
             Education & Achievements
@@ -57,7 +57,7 @@ const Education = () => {
           <div
             className="accent-stripe"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           />
 
@@ -80,7 +80,7 @@ const Education = () => {
           <div
             className="card p-0 overflow-hidden"
             style={{
-              borderRadius: "22px",
+              borderRadius: "4px",
             }}
           >
             {/* Top Header */}
@@ -89,8 +89,8 @@ const Education = () => {
               style={{
                 background: "var(--accent-3)",
                 borderBottom: "var(--border)",
-                borderTopLeftRadius: "22px",
-                borderTopRightRadius: "22px",
+                borderTopLeftRadius: "4px",
+                borderTopRightRadius: "4px",
               }}
             >
               <p className="font-mono-custom text-xs text-white opacity-70 mb-1">
@@ -111,8 +111,8 @@ const Education = () => {
               className="p-6"
               style={{
                 background: "var(--bg-card)",
-                borderBottomLeftRadius: "22px",
-                borderBottomRightRadius: "22px",
+                borderBottomLeftRadius: "4px",
+                borderBottomRightRadius: "4px",
               }}
             >
               <div className="flex items-center gap-3 mb-6">
@@ -122,7 +122,7 @@ const Education = () => {
                     background: "var(--bg-white)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-sm)",
-                    borderRadius: "14px",
+                    borderRadius: "4px",
                   }}
                 >
                   BCA
@@ -159,7 +159,7 @@ const Education = () => {
                     key={i}
                     className="tag"
                     style={{
-                      borderRadius: "999px",
+                      borderRadius: "4px",
                     }}
                   >
                     {c}
@@ -173,7 +173,7 @@ const Education = () => {
           <div
             className="card p-0 overflow-hidden"
             style={{
-              borderRadius: "22px",
+              borderRadius: "4px",
             }}
           >
             {/* Top Header */}
@@ -182,8 +182,8 @@ const Education = () => {
               style={{
                 background: "#2563eb",
                 borderBottom: "var(--border)",
-                borderTopLeftRadius: "22px",
-                borderTopRightRadius: "22px",
+                borderTopLeftRadius: "4px",
+                borderTopRightRadius: "4px",
               }}
             >
               <p className="font-mono-custom text-xs text-white opacity-70 mb-1">
@@ -204,8 +204,8 @@ const Education = () => {
               className="p-6"
               style={{
                 background: "var(--bg-card)",
-                borderBottomLeftRadius: "22px",
-                borderBottomRightRadius: "22px",
+                borderBottomLeftRadius: "4px",
+                borderBottomRightRadius: "4px",
               }}
             >
               <div className="flex items-center gap-3 mb-5">
@@ -215,7 +215,7 @@ const Education = () => {
                     background: "var(--bg-white)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-sm)",
-                    borderRadius: "14px",
+                    borderRadius: "4px",
                   }}
                 >
                   DJ
@@ -262,7 +262,7 @@ const Education = () => {
                     key={i}
                     className="tag"
                     style={{
-                      borderRadius: "999px",
+                      borderRadius: "4px",
                     }}
                   >
                     {tech}
@@ -290,7 +290,7 @@ const Education = () => {
                   i + 1
                 } card-white p-4 flex items-start gap-4`}
                 style={{
-                  borderRadius: "18px",
+                  borderRadius: "4px",
                 }}
               >
                 <div
@@ -299,7 +299,7 @@ const Education = () => {
                     background: "var(--bg-2)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-sm)",
-                    borderRadius: "10px",
+                    borderRadius: "4px",
                   }}
                 >
                   {a.icon}

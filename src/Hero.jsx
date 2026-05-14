@@ -130,7 +130,7 @@ const Hero = () => {
         className="absolute top-20 left-46 opacity-20 font-mono-custom text-xs border-2 border-dashed border-current px-3 py-1 rotate-[-3deg]"
         style={{
           color: "var(--accent)",
-          borderRadius: "10px",
+          borderRadius: "4px",
         }}
       >
         AVAILABLE FOR HIRE
@@ -139,7 +139,7 @@ const Hero = () => {
       <div
         className="absolute bottom-28 right-16 opacity-15 font-mono-custom text-xs border-2 border-dashed border-current px-3 py-1 rotate-[2deg]"
         style={{
-          borderRadius: "10px",
+          borderRadius: "4px",
         }}
       >
         INDIA · UTC+5:30
@@ -154,7 +154,7 @@ const Hero = () => {
                 <span
                   className="section-label flex items-center gap-2"
                   style={{
-                    borderRadius: "999px",
+                    borderRadius: "4px",
                   }}
                 >
                   <span className="w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse" />
@@ -227,7 +227,7 @@ const Hero = () => {
                 }
                 className="btn-primary px-8 py-4 text-base"
                 style={{
-                  borderRadius: "12px",
+                  borderRadius: "4px",
                 }}
               >
                 View My Work →
@@ -239,7 +239,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="btn-outline px-8 py-4 text-base flex items-center justify-center"
                 style={{
-                  borderRadius: "12px",
+                  borderRadius: "4px",
                 }}
               >
                 LinkedIn ↗
@@ -262,7 +262,7 @@ const Hero = () => {
                     background: "var(--bg-white)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-sm)",
-                    borderRadius: "14px",
+                    borderRadius: "4px",
                   }}
                 >
                   <div
@@ -299,7 +299,7 @@ const Hero = () => {
                     background: "var(--bg-white)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-md)",
-                    borderRadius: "14px",
+                    borderRadius: "4px",
                     animation: `heroFloat ${c.dur} ease-in-out infinite`,
                     animationDelay: c.delay,
                     "--drift": c.drift,
@@ -313,7 +313,7 @@ const Hero = () => {
                       background: c.color,
                       border: "var(--border)",
                       boxShadow: "2px 2px 0px #1a1a1a",
-                      borderRadius: "8px",
+                      borderRadius: "4px",
                     }}
                   >
                     {c.icon}
@@ -338,7 +338,7 @@ const Hero = () => {
                   border: "var(--border)",
                   boxShadow: "var(--shadow-lg)",
                   color: "white",
-                  borderRadius: "18px",
+                  borderRadius: "4px",
                 }}
               >
                 {"</>"}
@@ -351,7 +351,7 @@ const Hero = () => {
                   border: "var(--border)",
                   boxShadow: "var(--shadow-lg)",
                   color: "white",
-                  borderRadius: "16px",
+                  borderRadius: "4px",
                 }}
               >
                 {"</>"}

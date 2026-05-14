@@ -14,7 +14,7 @@ const Footer = () => {
         style={{
           background: "rgba(255,255,255,0.01)",
           border: "1px solid rgba(255,255,255,0.06)",
-          borderRadius: "22px",
+          borderRadius: "4px",
           backdropFilter: "blur(10px)",
         }}
       >
@@ -26,7 +26,7 @@ const Footer = () => {
               background: "var(--accent)",
               border: "1.5px solid #fff",
               color: "#fff",
-              borderRadius: "12px",
+              borderRadius: "4px",
               boxShadow: "2px 2px 0px rgba(255,255,255,0.15)",
             }}
           >
@@ -77,7 +77,7 @@ const Footer = () => {
               style={{
                 color: "#9a9a9a",
                 border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "999px",
+                borderRadius: "4px",
                 background: "rgba(255,255,255,0.03)",
               }}
               onMouseEnter={(e) => {

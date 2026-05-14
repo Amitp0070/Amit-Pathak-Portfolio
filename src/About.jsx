@@ -61,7 +61,7 @@ const About = () => {
           <span
             className="section-label"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           >
             About Me
@@ -72,7 +72,7 @@ const About = () => {
           <div
             className="accent-stripe"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           />
 
@@ -96,7 +96,7 @@ const About = () => {
           <div
             className="sr-left card p-8"
             style={{
-              borderRadius: "18px",
+              borderRadius: "4px",
             }}
           >
             <div className="flex items-start gap-4 mb-6">
@@ -106,7 +106,7 @@ const About = () => {
                   background: "var(--accent)",
                   border: "var(--border)",
                   boxShadow: "var(--shadow-md)",
-                  borderRadius: "14px",
+                  borderRadius: "4px",
                 }}
               >
                 AP
@@ -166,7 +166,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="btn-outline px-4 py-2 text-xs"
                 style={{
-                  borderRadius: "10px",
+                  borderRadius: "4px",
                 }}
               >
                 GitHub ↗
@@ -178,7 +178,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="btn-outline px-4 py-2 text-xs"
                 style={{
-                  borderRadius: "10px",
+                  borderRadius: "4px",
                 }}
               >
                 LinkedIn ↗
@@ -188,7 +188,7 @@ const About = () => {
                 href="mailto:amitpathak00700@gmail.com"
                 className="btn-primary px-4 py-2 text-xs"
                 style={{
-                  borderRadius: "10px",
+                  borderRadius: "4px",
                 }}
               >
                 Email Me
@@ -203,7 +203,7 @@ const About = () => {
                 key={i}
                 className={`sr-hidden sr-d${i + 2} card-white p-5`}
                 style={{
-                  borderRadius: "16px",
+                  borderRadius: "4px",
                 }}
               >
                 <div
@@ -212,7 +212,7 @@ const About = () => {
                     background: "var(--bg-2)",
                     border: "var(--border)",
                     boxShadow: "var(--shadow-sm)",
-                    borderRadius: "10px",
+                    borderRadius: "4px",
                   }}
                 >
                   {t.icon}
@@ -251,7 +251,7 @@ const About = () => {
               borderTop: "var(--border)",
               borderBottom: "var(--border)",
               background: "var(--bg-white)",
-              borderRadius: "16px",
+              borderRadius: "4px",
             }}
           >
             <div className="ticker-track flex gap-4 w-max">
@@ -260,7 +260,7 @@ const About = () => {
                   key={i}
                   className="tag flex items-center gap-2"
                   style={{
-                    borderRadius: "999px",
+                    borderRadius: "4px",
                   }}
                 >
                   <span

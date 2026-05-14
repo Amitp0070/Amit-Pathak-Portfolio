@@ -45,7 +45,7 @@ const PROJECTS = [
     title: "CookingStories",
     subtitle: "Recipe Sharing Platform",
 
-    type: "Personal Project",
+    type: "Full Stack Project",
 
     typeColor: "#2563eb",
 
@@ -74,7 +74,7 @@ const PROJECTS = [
 
     github: "https://github.com/Amitp0070",
 
-    demo: "https://www.youtube.com/",
+    demo: "https://youtu.be/B5EJnMGmEx0",
   },
   {
     title: "Online Resume Builder",
@@ -178,7 +178,7 @@ const PROJECTS = [
 
     github: "https://github.com/Amitp0070/BakeryProject-main",
 
-    demo: "https://www.youtube.com/",
+    demo: "https://youtu.be/N0gyAlpiF_8",
   },
 
   {
@@ -213,7 +213,7 @@ const PROJECTS = [
 
     github: "https://github.com/Amitp0070/car-marketplace",
 
-    demo: "https://www.youtube.com/",
+    demo: "https://youtu.be/7WKX1LNfKHg",
   },
   {
     title: "Finance Tracker",
@@ -250,7 +250,7 @@ const PROJECTS = [
 
     github: "https://github.com/Amitp0070/Django---HTMX-App",
 
-    demo: "https://www.youtube.com/",
+    demo: "https://youtu.be/nJYE9YM-UmU",
   },
 ];
 
@@ -292,7 +292,7 @@ const Projects = () => {
           <span
             className="section-label"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           >
             Projects
@@ -303,7 +303,7 @@ const Projects = () => {
           <div
             className="accent-stripe"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           />
 
@@ -356,7 +356,7 @@ const Projects = () => {
                 background: "var(--bg-2)",
                 border: "var(--border)",
                 boxShadow: "var(--shadow-xl)",
-                borderRadius: "22px",
+                borderRadius: "4px",
                 overflow: "hidden",
               }}
             >
@@ -374,12 +374,12 @@ const Projects = () => {
                 (i % 2) + 1
               } card overflow-hidden flex flex-col`}
               style={{
-                borderRadius: "20px",
+                borderRadius: "4px",
               }}
             >
               {/* Top Bar */}
               <div
-                className="h-10 flex-shrink-0"
+                className="h-2 flex-shrink-0"
                 style={{
                   background: p.gradient,
                 }}
@@ -406,7 +406,7 @@ const Projects = () => {
                       color: "#fff",
                       border: "var(--border)",
                       boxShadow: "2px 2px 0px #1a1a1a",
-                      borderRadius: "999px",
+                      borderRadius: "4px",
                     }}
                   >
                     {p.type}
@@ -463,7 +463,7 @@ const Projects = () => {
                         boxShadow: "2px 2px 0px rgba(26,26,26,0.3)",
                         color: "var(--text-secondary)",
                         fontWeight: 600,
-                        borderRadius: "999px",
+                        borderRadius: "4px",
                       }}
                     >
                       {t}
@@ -479,7 +479,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="btn-outline px-4 py-2 text-xs"
                     style={{
-                      borderRadius: "12px",
+                      borderRadius: "4px",
                     }}
                   >
                     GitHub ↗
@@ -491,7 +491,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="btn-primary px-4 py-2 text-xs"
                     style={{
-                      borderRadius: "12px",
+                      borderRadius: "4px",
                     }}
                   >
                     Live Demo ↗

@@ -26,11 +26,14 @@ const EXPERIENCES = [
         ],
 
         bullets: [
-          "Contributed to the development of a Laravel-based backend application following MVC architecture and clean coding practices.",
-          "Developed and maintained RESTful APIs with proper request validation, structured response handling, and centralized exception management.",
-          "Implemented secure authentication and authorization using Laravel Passport, Sanctum, middleware, and role-based access control.",
-          "Worked with Eloquent ORM for relational database design, query optimization, indexing, and efficient data filtering.",
-          "Performed API testing and debugging using Postman while collaborating with cross-functional teams on production updates.",
+          "Gained hands-on experience in backend development using PHP, Laravel, and SQL to build scalable and secure web applications following MVC architecture.",
+          "Developed and consumed RESTful APIs, implemented CRUD operations, and worked with Laravel Controllers, Services, Requests, and Resources for clean code structure.",
+          "Utilized Eloquent ORM for database interactions, relationships, query optimization, indexing, and efficient data filtering.",
+          "Implemented form request validation, centralized exception handling, and standardized API responses for maintainable backend systems.",
+          "Worked with authentication and authorization mechanisms including Laravel Passport, Sanctum, middleware, and role-based access control.",
+          "Integrated SAP systems with Laravel applications for seamless data synchronization, inventory management, and enterprise workflow automation.",
+          "Integrated EFRIS (Electronic Fiscal Receipting and Invoicing Solution) to automate stock management and tax handling, ensuring real-time fiscal compliance and accurate inventory tracking.",
+          "Performed API testing and debugging using Postman while collaborating with cross-functional teams to refactor code and deploy application updates efficiently.",
         ],
       },
     ],
@@ -91,7 +94,7 @@ const Experience = () => {
           <span
             className="section-label"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           >
             Work Experience
@@ -102,7 +105,7 @@ const Experience = () => {
           <div
             className="accent-stripe"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           />
 
@@ -121,12 +124,14 @@ const Experience = () => {
 
         {/* Experience Cards */}
         <div className="flex flex-col gap-8">
-          {EXPERIENCES.map((exp, ei) => (
+          {EXPERIENCES.map((exp, i) => (
             <div
-              key={ei}
-              className={`sr-hidden sr-d${ei + 1}`}
+              key={i}
+              className={`sr-hidden sr-d${
+                (i % 2) + 1
+              } card overflow-hidden flex flex-col`}
               style={{
-                borderRadius: "20px",
+                borderRadius: "4px",
                 overflow: "hidden",
               }}
             >
@@ -138,8 +143,8 @@ const Experience = () => {
                   border: "var(--border)",
                   boxShadow: "var(--shadow-md)",
                   borderBottom: "none",
-                  borderTopLeftRadius: "20px",
-                  borderTopRightRadius: "20px",
+                  borderTopLeftRadius: "4px",
+                  borderTopRightRadius: "4px",
                 }}
               >
                 <div>
@@ -162,7 +167,7 @@ const Experience = () => {
                     style={{
                       background: "rgba(255,255,255,0.2)",
                       border: "1px solid rgba(255,255,255,0.4)",
-                      borderRadius: "999px",
+                      borderRadius: "4px",
                     }}
                   >
                     {exp.type} · {exp.location}
@@ -176,8 +181,8 @@ const Experience = () => {
                   border: "var(--border)",
                   borderTop: "none",
                   boxShadow: "var(--shadow-md)",
-                  borderBottomLeftRadius: "20px",
-                  borderBottomRightRadius: "20px",
+                  borderBottomLeftRadius: "4px",
+                  borderBottomRightRadius: "4px",
                   overflow: "hidden",
                 }}
               >
@@ -211,7 +216,7 @@ const Experience = () => {
                           key={ti}
                           className="tag"
                           style={{
-                            borderRadius: "999px",
+                            borderRadius: "4px",
                           }}
                         >
                           {t}
@@ -230,7 +235,7 @@ const Experience = () => {
                           }}
                         >
                           <span
-                            className="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                            className="mt-1.5 w-2 h-2  flex-shrink-0"
                             style={{
                               background: exp.color,
                             }}

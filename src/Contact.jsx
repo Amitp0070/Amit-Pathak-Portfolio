@@ -112,7 +112,7 @@ const Contact = () => {
           <span
             className="section-label"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           >
             Get In Touch
@@ -123,7 +123,7 @@ const Contact = () => {
           <div
             className="accent-stripe"
             style={{
-              borderRadius: "999px",
+              borderRadius: "4px",
             }}
           />
 
@@ -159,7 +159,7 @@ const Contact = () => {
                 key={i}
                 className="card-white p-4 flex items-center justify-between"
                 style={{
-                  borderRadius: "18px",
+                  borderRadius: "4px",
                 }}
               >
                 <span
@@ -205,7 +205,7 @@ const Contact = () => {
                 background: "var(--accent)",
                 border: "var(--border)",
                 boxShadow: "var(--shadow-md)",
-                borderRadius: "20px",
+                borderRadius: "4px",
               }}
             >
               <p className="font-mono-custom text-xs text-white opacity-80 mb-1">
@@ -226,7 +226,7 @@ const Contact = () => {
           <div
             className="lg:col-span-3 card p-8"
             style={{
-              borderRadius: "22px",
+              borderRadius: "4px",
             }}
           >
             <form onSubmit={send} className="flex flex-col gap-5">
@@ -277,7 +277,7 @@ const Contact = () => {
                       required
                       className="form-input"
                       style={{
-                        borderRadius: "12px",
+                        borderRadius: "4px",
                       }}
                     />
                   </div>
@@ -308,7 +308,7 @@ const Contact = () => {
                   placeholder="e.g. Laravel Backend Developer"
                   className="form-input"
                   style={{
-                    borderRadius: "12px",
+                    borderRadius: "4px",
                   }}
                 />
               </div>
@@ -339,7 +339,7 @@ const Contact = () => {
                   className="form-input"
                   style={{
                     resize: "none",
-                    borderRadius: "14px",
+                    borderRadius: "4px",
                   }}
                 />
               </div>
@@ -352,7 +352,7 @@ const Contact = () => {
                   loading ? "opacity-60 cursor-not-allowed" : ""
                 }`}
                 style={{
-                  borderRadius: "14px",
+                  borderRadius: "4px",
                 }}
               >
                 {loading ? (
@@ -392,7 +392,7 @@ const Contact = () => {
                     border: "1px solid #16a34a",
                     padding: "12px",
                     background: "#f0fdf4",
-                    borderRadius: "12px",
+                    borderRadius: "4px",
                   }}
                 >
                   ✓ Your message has been delivered successfully.
@@ -407,7 +407,7 @@ const Contact = () => {
                     border: "1px solid #e85d3a",
                     padding: "12px",
                     background: "#fff5f5",
-                    borderRadius: "12px",
+                    borderRadius: "4px",
                   }}
                 >
                   ✗ Oops! Something went wrong while sending the message.
