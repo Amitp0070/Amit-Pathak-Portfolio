@@ -615,9 +615,9 @@ const _FLAGSHIPS = [
 /* Display order for the flagship case studies. Reorder these ids to change the
    sequence; `no` (the "Project 0X" label) is renumbered automatically to match. */
 const FLAGSHIP_ORDER = [
+  "whatsapp-inbox",
   "auto-publisher",
   "voice-call-analysis",
-  "whatsapp-inbox",
   "twin-os",
 ];
 export const FLAGSHIPS = FLAGSHIP_ORDER.map((id, i) => ({
