@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 const STATS = [
   { value: "3", label: "Companies · 3 roles" },
-  { value: "2 yr", label: "Production experience" },
+  { value: "2+ yr", label: "Production experience" },
   { value: "9", label: "Projects shipped" },
   { value: "Backend + AI", label: "Where I focus" },
 ];

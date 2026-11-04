@@ -2728,20 +2728,29 @@ button:hover .swap-line,
     gap: 12px 28px;
   }
 }
+/* Balanced, packed columns (masonry-style) so groups of very different
+   lengths fill the space tightly instead of leaving ragged grid gaps. */
 .cs-featgrid {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  column-count: 3;
+  column-gap: 28px;
 }
-@media (max-width: 560px) {
+@media (max-width: 680px) {
   .cs-featgrid {
-    grid-template-columns: 1fr 1fr;
+    column-count: 2;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .cs-featgrid {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
+}
+.cs-featcol {
+  display: inline-block; /* keeps break-inside:avoid reliable in multicol */
+  width: 100%;
+  margin: 0 0 22px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 .cs-featgrp {
   display: block;

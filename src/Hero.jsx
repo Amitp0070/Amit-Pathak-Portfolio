@@ -231,7 +231,7 @@ const Hero = () => {
                 color: "var(--text-secondary)",
               }}
             >
-              Backend Developer with <strong>2 years</strong> of professional
+              Backend Developer with <strong>2+ years</strong> of professional
               experience building enterprise ERP systems, scalable REST APIs,
               and AI-powered applications. Currently developing AI Agents,
               RAG-based solutions, and enterprise backend platforms using
@@ -266,12 +266,24 @@ const Hero = () => {
               >
                 <SwapText>LinkedIn ↗</SwapText>
               </a>
+
+              {/* Resume download — drop your file at public/resume.pdf and this works. */}
+              <a
+                href="/resume.pdf"
+                download="Amit-Pathak-Resume.pdf"
+                className="btn-outline px-8 py-4 text-base flex items-center justify-center"
+                style={{
+                  borderRadius: "4px",
+                }}
+              >
+                <SwapText>Download Resume ↓</SwapText>
+              </a>
             </div>
 
             {/* Stats */}
             <div className="reveal-fade delay-700 flex items-center gap-6 mt-10 justify-center lg:justify-start flex-wrap">
               {[
-                { num: 2, suffix: "", label: "Years Experience" },
+                { num: 2, suffix: "+", label: "Years Experience" },
                 { num: 10, suffix: "+", label: "Production Projects" },
                 { num: 3, suffix: "", label: "Enterprise Products" },
               ].map((s, i) => (

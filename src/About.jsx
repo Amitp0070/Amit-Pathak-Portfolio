@@ -62,7 +62,11 @@ const About = () => {
               letterSpacing: "-0.02em",
             }}
           >
-            <RevealText as="span" className="block" text="The developer behind" />
+            <RevealText
+              as="span"
+              className="block"
+              text="The developer behind"
+            />
             <span className="grad-text font-display italic">
               backend and AI systems
             </span>
@@ -109,7 +113,7 @@ const About = () => {
                   className="font-mono-custom text-xs mt-0.5"
                   style={{ color: "var(--text-muted)" }}
                 >
-                  Azamgarh, Uttar Pradesh, India
+                  Jaunpur, Uttar Pradesh, India
                 </p>
               </div>
             </div>
@@ -117,12 +121,10 @@ const About = () => {
               className="text-sm leading-relaxed mb-4"
               style={{ color: "var(--text-secondary)" }}
             >
-              Backend Developer with 2 years of experience building enterprise
+              Backend Developer with 2+ years of experience building enterprise
               ERP systems, scalable backend APIs, and AI-powered products.
               Currently working at{" "}
-              <strong style={{ color: "var(--text-primary)" }}>
-                Sevitsil
-              </strong>
+              <strong style={{ color: "var(--text-primary)" }}>Sevitsil</strong>
               , after previously working at{" "}
               <strong style={{ color: "var(--text-primary)" }}>
                 TechnoBren Infotech Pvt. Ltd.

@@ -307,16 +307,16 @@ const _FLAGSHIPS = [
     domain: "AI Automation",
     color: "#db2777",
     tagline:
-      "Discovers trending topics, generates publish-ready content and images, and schedules & publishes across Facebook, Instagram and LinkedIn — from a single studio.",
+      "Discovers trending topics, writes publish-ready posts, images and narrated videos, and schedules & publishes across Facebook, Instagram, LinkedIn and YouTube — from a single studio.",
     oneLiner:
-      "An AI platform that turns raw signals — trending industry news or a founder’s voice note — into scheduled, multi-platform social posts, end to end.",
+      "An AI platform that turns raw signals — trending industry news, a founder’s voice note or a few lines of text — into scheduled multi-platform posts and narrated short videos, end to end.",
     summary:
-      "Auto Publisher crawls and scores trending topics, generates platform-specific copy with Google Gemini, creates matching images with NVIDIA FLUX, and publishes through the Facebook, Instagram and LinkedIn APIs — with two distinct creation engines feeding one review-and-schedule workflow.",
+      "Auto Publisher crawls and scores trending topics, generates platform-specific copy with Google Gemini, creates images with NVIDIA FLUX, and publishes through the Facebook, Instagram, LinkedIn and YouTube APIs — and turns any text, in English, Hindi or Hinglish, into a narrated, captioned MP4 for YouTube, Shorts and Reels, scheduled from the same workflow. Built on Django with a provider-abstraction core, so AI and publishing vendors swap by configuration.",
     thesis: "Vendor-agnostic by design: swap AI and publishing providers through configuration.",
     problem:
-      "Consistent multi-platform posting is a chain of brittle, manual steps: find what’s trending, write per-platform copy, make an image, meet each network’s publishing constraints, then schedule it. Any link breaking stops the whole pipeline.",
+      "Consistent multi-platform posting is a chain of brittle, manual steps: find what’s trending, write per-platform copy, make an image, meet each network’s publishing constraints, then schedule it. Any link breaking stops the whole pipeline. Short video adds a second chain on top: a script, a voiceover, captions, licensed visuals, a thumbnail and an upload. Hosted tools charge per minute, Hindi and Hinglish support is weak, and free AI tiers allow only a few requests a day.",
     approach:
-      "Two creation engines — Trend Intelligence and a Voice & Text Studio — feed a single Generate → Refine → Approve → Schedule → Publish → Measure lifecycle. AI vendors and social publishers sit behind provider abstractions, so they can be replaced without rewriting the application.",
+      "Two creation engines — Trend Intelligence and a Voice & Text Studio — feed a single Generate → Refine → Approve → Schedule → Publish → Measure lifecycle. AI vendors and social publishers sit behind provider abstractions, so they can be replaced without rewriting the application. The AI video studio owns its own pipeline: text → slides → voice → rendered frames → MP4 → publish. Every outside service there sits behind a cache and a fallback chain, so if an AI, a voice or a picture source fails, the video is still made.",
 
     architecture: {
       title: "Provider abstraction",
@@ -359,6 +359,26 @@ const _FLAGSHIPS = [
         label: "Instagram publishing (Graph API)",
         steps: ["Create media container", "Poll status", "Publish"],
       },
+      {
+        label: "Text → video pipeline",
+        steps: [
+          "Text with stars + narration",
+          "Slides (≤ 25 words)",
+          "Voice (3 engines · cached)",
+          "Pillow slide render",
+          "MoviePy: pictures · clips · music",
+          "MP4 + SRT + thumbnail",
+        ],
+      },
+      {
+        label: "Voice fallback chain",
+        steps: [
+          "Chosen voice (Gemini / OpenRouter)",
+          "Same-gender free voice",
+          "Google TTS",
+          "Silent video + notice",
+        ],
+      },
     ],
 
     scoring: {
@@ -381,6 +401,8 @@ const _FLAGSHIPS = [
         group: "Publish & Connect",
         items: [
           "Facebook / Instagram / LinkedIn publishing",
+          "YouTube video & Shorts publishing",
+          "Unified inbox: comments & messages with replies",
           "OAuth connections + manual credentials",
           "Cloudinary media management",
           "Public-URL handling for Instagram",
@@ -395,7 +417,58 @@ const _FLAGSHIPS = [
           "Drag-and-drop scheduling",
           "Automatic publishing (images; video/PDF preview)",
           "Feature-gated Meta/LinkedIn analytics",
+          "Performance dashboard: trend vs previous period, best-time heatmap",
+          "Activity & API logs with secret masking",
+          "Live /health/perf/ system page",
           "Daemon-thread background workers",
+        ],
+      },
+      {
+        group: "AI Video Studio",
+        items: [
+          "Text becomes slides automatically",
+          "Highlighted key words (*stars* or auto-pick)",
+          "Narration lines: screen shows a short line, the voice explains more",
+          "7 text styles: big text, subtitles, word captions, one word, karaoke, lower third, quote card",
+          "12 word animations (typewriter, pop, zoom, drop, blur, wave, marker…)",
+          "7 font styles, any colours, colour / box / underline highlights",
+          "5 themes incl. “No theme”; slow zoom and pan; video clips as backgrounds",
+          "3 formats: 16:9, 9:16 Shorts/Reels, 1:1",
+          "Live slide preview",
+          "6 ready-made looks + “My presets”",
+          "Background music, loudness-matched under the voice",
+          "Designed YouTube thumbnail, .srt/.vtt subtitles",
+        ],
+      },
+      {
+        group: "Voices (3 engines)",
+        items: [
+          "300+ free Microsoft neural voices in 140+ languages (edge-tts)",
+          "30 expressive Gemini TTS voices that act out tags: [excited], [whisper], [pause 2s], <laugh>",
+          "10 HeyGen voices via OpenRouter, in 39 languages (the key is used only for voice)",
+          "Samples, and “Hear my first slide”",
+          "Language check: the voice matches the text’s language",
+          "Per-slide audio cache; a live meter of requests needed and left today",
+        ],
+      },
+      {
+        group: "Scripts & Story Studio",
+        items: [
+          "“Write with AI”: topic + language + length + audience + tone → a script in the app’s format",
+          "YouTube scripts from keyword research and news trends",
+          "Kids Videos: built-in lessons, kid-safe filter (Simple English Wikipedia only), “made for kids” flag",
+          "Original superhero episodes",
+          "Movies & Comics: own-words reviews with spoiler control; public-domain comics only",
+        ],
+      },
+      {
+        group: "Pictures, Clips & Music",
+        items: [
+          "Picture search in 17 styles, with watermarked stock previews hidden",
+          "“Free to use only” licence mode (Openverse); Wikimedia Commons and Pixabay clips; uploads",
+          "Free music search",
+          "Licence credits kept for every video",
+          "Source pictures deleted after rendering, except the thumbnail’s picture",
         ],
       },
     ],
@@ -404,9 +477,14 @@ const _FLAGSHIPS = [
       "Provider abstractions let AI vendors and social publishers be swapped through configuration.",
       "Two creation pipelines — trend-driven and voice-driven — merge into one review UX.",
       "Handles Instagram’s container → poll → publish flow and its public-image-URL requirement via Cloudinary.",
-      "Background automation runs as lifespan-managed daemon threads — news crawler, auto-publish scheduler and analytics ingest — with retry/backoff; Celery + Redis are scaffolded for horizontal scale, not the active runtime.",
+      "Background automation runs as in-process background threads — news crawler, auto-publish scheduler and analytics ingest — with retry/backoff, so posts and videos ship without an external task queue.",
       "Fault isolation keeps one failing network or enrichment step from stalling the whole pipeline.",
       "Feature-flagged rollout for staged delivery of new capabilities.",
+      "Text is drawn with Pillow as small per-word images, so animations move a few sprites per frame and identical frames are drawn once: no ImageMagick, no GPU, no downloaded AI models.",
+      "Gemini voices get one request per slide: batching made the model repeat lines, which we confirmed by transcribing the audio. Pauses are cut out and put back as exact silence.",
+      "Every voice clip is cached and daily limits are remembered, so a free AI tier is never spent twice on the same slide. When a voice fails, a free voice of the same gender takes over and the video page says why.",
+      "Web downloads are SSRF-safe: the server fetches only addresses its own search signed, http(s) only on ports 80 and 443, public IPs only, checked again after every redirect.",
+      "The video studio has 561 automated tests. Every paid or rate-limited API is mocked, so tests never spend real quota.",
     ],
 
     challenges: [
@@ -422,24 +500,111 @@ const _FLAGSHIPS = [
         title: "Two pipelines, one UX",
         body: "Trend-driven and voice-driven creation are very different flows; both are normalized into the same Generate → Refine → Approve → Schedule → Publish → Measure lifecycle.",
       },
+      {
+        title: "Expressive AI voices that don’t repeat themselves",
+        body: "Gemini TTS sometimes said a line twice when given a whole script; this was confirmed by transcribing its audio. Fix: one request per slide, silences inserted locally to the exact length, every clip cached, the daily limit remembered, and a same-gender free voice as fallback.",
+      },
+      {
+        title: "Free tiers you can plan with",
+        body: "Gemini allows about 10 voice requests a day per model, and OpenRouter’s free models share 50 a day. The Create page shows “This video: N requests · M left today” before rendering. It counts cached clips and asks OpenRouter for the real number left.",
+      },
+      {
+        title: "Rendering text without ImageMagick or a GPU",
+        body: "MoviePy’s TextClip breaks on Windows, so every slide is drawn with Pillow from pre-rendered word sprites. The whole studio needs about 270 MB of libraries.",
+      },
+      {
+        title: "Hindi and Hinglish",
+        body: "Devanagari fonts for every style, and voices matched to the text’s language. Honest limit: perfect conjunct shaping on Windows needs FriBiDi/raqm, which isn’t enabled yet.",
+      },
+      {
+        title: "Safe, licensed media from the open web",
+        body: "SSRF guards, watermark filtering, a free-licence mode, and credits kept even after source pictures are deleted.",
+      },
     ],
 
     metrics: [
-      { value: "~39K", label: "Lines of code" },
-      { value: "129", label: "REST endpoints" },
-      { value: "26", label: "DB tables" },
-      { value: "3", label: "Social platforms" },
+      { value: "4", label: "Social platforms" },
       { value: "5", label: "Trend signals" },
-      { value: "2", label: "Creation engines" },
+      { value: "3", label: "Voice engines" },
+      { value: "340+", label: "AI voices" },
+      { value: "7 · 12", label: "Text styles · animations" },
+      { value: "561", label: "Automated tests" },
     ],
 
     stack: [
-      { group: "AI / LLM", items: ["Google Gemini", "NVIDIA FLUX", "NVIDIA NIM", "Whisper / faster-whisper"] },
-      { group: "Backend", items: ["Python", "FastAPI", "Uvicorn", "Pydantic", "SQLAlchemy", "Alembic"] },
-      { group: "Frontend", items: ["React 18", "TypeScript", "Vite", "Tailwind", "React Router", "Axios"] },
-      { group: "Infrastructure", items: ["Daemon-thread workers", "WebSockets", "BeautifulSoup", "feedparser", "Celery + Redis (scaffolded)"] },
-      { group: "Integrations", items: ["Meta Graph API", "LinkedIn UGC API", "Cloudinary"] },
-      { group: "Security", items: ["JWT", "bcrypt / Passlib"] },
+      { group: "Backend", items: ["Python 3.10", "Django 5.2"] },
+      {
+        group: "AI Video & Voice",
+        items: [
+          "MoviePy 2.2",
+          "Pillow 11",
+          "Gemini TTS (30 expressive voices)",
+          "Microsoft neural voices (edge-tts)",
+          "OpenRouter · HeyGen Voice",
+          "NumPy",
+          "ffmpeg (imageio-ffmpeg)",
+          "gTTS fallback",
+        ],
+      },
+      {
+        group: "AI / LLM",
+        items: [
+          "Google Gemini (Flash + Flash-Lite fallback)",
+          "NVIDIA NIM API (OpenAI-compatible)",
+          "NVIDIA FLUX.1-dev image generation",
+          "OpenAI Whisper (speech-to-text)",
+        ],
+      },
+      {
+        group: "Data",
+        items: ["PostgreSQL", "psycopg 3", "Django ORM + migrations", "LocMem cache"],
+      },
+      {
+        group: "Frontend",
+        items: [
+          "Django templates",
+          "Vanilla JavaScript",
+          "Terra design system (light / dark)",
+          "Custom utility-CSS generator (no Node build)",
+          "Hand-built SVG charts",
+        ],
+      },
+      {
+        group: "Integrations",
+        items: [
+          "YouTube Data API v3",
+          "Meta Graph API v23 (Facebook, Instagram)",
+          "LinkedIn API v2",
+          "Cloudinary",
+          "OpenRouter",
+          "Openverse (pictures + music)",
+          "Wikimedia Commons",
+          "Pixabay",
+          "DuckDuckGo search (ddgs)",
+          "RSS / Google News",
+          "SMTP email",
+        ],
+      },
+      {
+        group: "Security",
+        items: [
+          "Fernet token encryption",
+          "Signed one-time approval links",
+          "SSRF-safe downloads",
+          "Login lockout",
+          "Secret redaction in logs",
+          "CSRF + owner-only views",
+        ],
+      },
+      {
+        group: "Infra & Testing",
+        items: [
+          "In-process background job threads",
+          "Live /health/perf/ endpoint",
+          "561 automated tests (mocked APIs)",
+          "arabic-reshaper + python-bidi (RTL text)",
+        ],
+      },
     ],
 
     interfaces: [
@@ -447,6 +612,10 @@ const _FLAGSHIPS = [
       { view: "Create Studio", note: "Trend + voice to post" },
       { view: "Scheduling Calendar", note: "Drag-and-drop" },
       { view: "Connected Channels", note: "OAuth + analytics" },
+      { view: "Create Video Studio", note: "Text → narrated MP4, live preview" },
+      { view: "Upload & Find Pictures", note: "17 style tabs, free-licence filter" },
+      { view: "Voice Card", note: "3 voice types, samples, request meter" },
+      { view: "Performance Dashboard", note: "Trend chart, best-time heatmap" },
     ],
 
     links: {},

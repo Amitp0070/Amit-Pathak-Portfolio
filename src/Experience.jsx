@@ -12,7 +12,7 @@ import {
 const EXPERIENCES = [
   {
     no: "01",
-    company: "Sevitsil",
+    company: "Sevitsil Solutions",
     role: "Backend Developer",
     period: "Jun 2026 — Present",
     location: "India",
@@ -75,7 +75,7 @@ const EXPERIENCES = [
     no: "03",
     company: "Digipodium",
     role: "Software Developer Intern",
-    period: "Jun 2024 — Sep 2024",
+    period: "Jun 2024 — Mar 2025",
     location: "Lucknow, UP",
     type: "Internship",
     focus: "Full-stack Foundations",
@@ -143,7 +143,11 @@ const Experience = () => {
   useScrollReveal();
 
   return (
-    <section id="experience" className="py-10" style={{ background: "var(--bg)" }}>
+    <section
+      id="experience"
+      className="py-10"
+      style={{ background: "var(--bg)" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="sr-hidden sr-d1 mb-2">
           <span className="section-label" style={{ borderRadius: "4px" }}>
