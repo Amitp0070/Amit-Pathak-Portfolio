@@ -276,7 +276,7 @@ const Hero = () => {
                   borderRadius: "4px",
                 }}
               >
-                <SwapText>Download Resume ↓</SwapText>
+                <SwapText>Get Resume ↓</SwapText>
               </a>
             </div>
 
